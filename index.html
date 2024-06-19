@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Validaciones</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Practica de validaciones</h1>
+        <h2 class="subtitulo">Formulario de registro</h2>
+
+        <form action="" method="get">
+            <label for="username">Nombre de Usuario (5-15 caracteres alfanuméricos):</label>
+            <input type="text" id="username" name="username" 
+            class="input" placeholder="Nombre de usuario" pattern="^[a-zA-Z0-9]{5,15}$" 
+            title="Debe tener entre 5 y 15 caracteres alfanuméricos" required>
+            <br>
+            <label for="pass">Contraseña (8 caracteres):</label>
+            <input type="password" id="pass" name="pass" required
+            class="input" placeholder="Contraseña" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}"
+            title="Incluir al menos una letra mayúscula, una minúscula, un número y un carácter especial (!, @, #, etc.)">
+            <br>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email"
+            class="input" placeholder="Correo Electrónico" required>
+            <br>
+            <label for="NumTel">Numero de telefono:</label>
+            <input type="tel" id="NumTel" name="NumTel" required
+            class="input" placeholder="Telefono" pattern="\+\d{1,15}" 
+            title="Comenzar con el signo + y hasta 15 dígitos">
+            <br>
+            <label for="fch">Fecha de nacimiento:</label>
+            <input type="date" class="input" required max="2006-01-01">
+            <br>
+            <label for="CodPostal">Codigo Postal:</label><br>
+            <input type="text" id="CodPostal" name="CodPostal"
+            class="input" placeholder="Codigo postal" pattern="\d{5}"
+            title="Debe contener 5 digitos" required>
+            <br>
+            <input type="submit" class="boton" onclick="confirma()">
+        </form>
+    </div> 
+</body>   
+</html>
